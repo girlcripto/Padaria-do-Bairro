@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Padaria do Bairro - Sabor, Tradição e Comunidade desde 1985 em Campina Grande." />
+    <title>Padaria do Bairro - Sabor, Tradição e Comunidade</title>
+    <style>
+        :root {
+            --primary: #8B4513; /* SaddleBrown */
+            --secondary: #D2691E; /* Chocolate */
+            --accent: #F4A460; /* SandyBrown */
+            --light: #FFF8DC; /* Cornsilk */
+            --dark: #3E2723;
+            --text: #4E342E;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-area img {
+            height: 60px;
+            border-radius: 50%;
+        }
+
+        .logo-text h1 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            text-transform: uppercase;
+        }
+
+        .tagline {
+            font-size: 0.8rem;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=1200') no-repeat center/cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        /* Sections General */
+        section {
+            padding: 80px 0;
+        }
+
+        h2.section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        h2.section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary);
+            margin: 10px auto;
+        }
+
+        /* Grid de Produtos */
+        .produtos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-body h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        /* Ambiente / Vídeo */
+        .ambiente-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .video-wrapper {
+            flex: 1;
+            min-width: 300px;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 16/9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-info {
+            margin-bottom: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .hero h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho Principal -->
+    <header>
+        <div class="container header-content">
+            <div class="logo-area">
+                <img src="https://via.placeholder.com/60/8B4513/FFFFFF?text=PB" alt="Logo Padaria do Bairro" />
+                <div class="logo-text">
+                    <h1>Padaria do Bairro</h1>
+                    <p class="tagline">Sabor, Tradição e Comunidade</p>
+                </div>
+            </div>
+
+            <button class="menu-toggle" aria-label="Abrir Menu Principal" onclick="toggleMenu()">☰</button>
+            
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a href="#diferenciais">Diferenciais</a></li>
+                    <li><a href="#localizacao">Onde Estamos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h2>O sabor do pão quentinho que une a vizinhança.</h2>
+                <p>Desde 1985, honrando a tradição artesanal.</p>
+            </div>
+        </section>
+
+        <!-- Sobre Nós -->
+        <section id="sobre" class="container">
+            <h2 class="section-title">Nossa História</h2>
+            <article>
+                <p>A Padaria do Bairro nasceu há mais de 20 anos com a missão de oferecer pães fresquinhos e produtos caseiros que aproximam vizinhos e famílias. Nossa história começou em uma pequena cozinha com o Sr. José, e hoje somos referência local em qualidade e atendimento.</p>
+                <br>
+                <p>Trabalhamos com ingredientes selecionados, receitas artesanais e práticas sustentáveis. Valorizamos a comunidade, o atendimento acolhedor e o apoio a produtores locais, buscando sempre reduzir desperdício e usar embalagens recicláveis.</p>
+            </article>
+        </section>
+
+        <!-- Produtos -->
+        <section id="produtos" style="background-color: #fcf4ec;">
+            <div class="container">
+                <h2 class="section-title">Nossos Produtos</h2>
+                <div class="produtos-grid">
+                    <!-- Produto 1 -->
+                    <article class="card">
+                        <figure>
+                            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=400" alt="Pão Francês Artesanal crocante">
+                            <figcaption class="card-body">
+                                <h3>Pão Francês Artesanal</h3>
+                                <p>Crocante por fora, macio por dentro. Nossa marca registrada.</p>
+                            </figcaption>
+                        </figure>
+                    </article>
+
+                    <!-- Produto 2 -->
+                    <article class="card">
+                        <figure>
+                            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&q=80&w=400" alt="Bolo de Festa sabor chocolate">
+                            <figcaption class="card-body">
+                                <h3>Bolos de Festa</h3>
+                                <p>Recheios variados e receitas de família para sua celebração.</p>
+                            </figcaption>
+                        </figure>
+                    </article>
+
+                    <!-- Produto 3 -->
+                    <article class="card">
+                        <figure>
+                            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&q=80&w=400" alt="Croissant amanteigado">
+                            <figcaption class="card-body">
+                                <h3>Croissant</h3>
+                                <p>Massa folhada amanteigada seguindo a técnica clássica.</p>
+                            </figcaption>
+                        </figure>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diferenciais -->
+        <section id="diferenciais" class="container">
+            <h2 class="section-title">Por que nos escolher?</h2>
+            <div class="ambiente-content">
+                <div style="flex: 1;">
+                    <ul style="list-style-type: '🥖 '; padding-left: 20px;">
+                        <li><strong>Artesanal:</strong> Receitas familiares e exclusivas.</li>
+                        <li><strong>Acolhimento:</strong> Atendimento que te faz sentir em casa.</li>
+                        <li><strong>Sustentabilidade:</strong> Embalagens recicláveis e zero desperdício.</li>
+                        <li><strong>Personalização:</strong> Encomendas sob medida para sua festa.</li>
+                    </ul>
+                </div>
+                <div class="video-wrapper">
+                    <!-- Simulador de Vídeo -->
+                    <div style="text-align: center;">
+                        <p>▶ Vídeo Institucional</p>
+                        <small>(Vídeo: A Jornada Sensorial)</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Localização -->
+        <section id="localizacao" style="background-color: var(--primary); color: white;">
+            <div class="container">
+                <h2 class="section-title" style="color: white;">Onde Estamos</h2>
+                <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-around; text-align: center;">
+                    <div>
+                        <h3>Endereço</h3>
+                        <p>Rua das Flores, nº 123 - Centro<br>Campina Grande, PB</p>
+                    </div>
+                    <div>
+                        <h3>Horários</h3>
+                        <p>Seg a Sex: 06h às 20h<br>Sábados: 06h às 20h<br>Domingos: 06h às 14h</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Curso Info -->
+        <section id="curso" class="container">
+            <aside style="border-left: 4px solid var(--secondary); padding-left: 20px; font-style: italic;">
+                <h3>Projeto Educacional</h3>
+                <p>Este site faz parte do curso <strong>Programação Web (Qualifica São Paulo)</strong>. Um projeto integrado para capacitar novos desenvolvedores em HTML5, CSS3 e JavaScript.</p>
+            </aside>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <div class="footer-info">
+                <p><strong>Padaria do Bairro</strong> - CNPJ: 00.000.000/0001-00</p>
+                <p>📞 (11) 4000-1234 | ✉ contato@padariadobairro.com.br</p>
+            </div>
+            <p>&copy; 2026 Todos os direitos reservados. Sabor e Tradição desde 1985.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('main-nav');
+            if (nav.style.display === 'block') {
+                nav.style.display = 'none';
+            } else {
+                nav.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
