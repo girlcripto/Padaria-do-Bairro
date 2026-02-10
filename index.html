@@ -1,380 +1,615 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Padaria do Bairro - Sabor, Tradição e Comunidade desde 1985 em Campina Grande." />
-    <title>Padaria do Bairro - Sabor, Tradição e Comunidade</title>
-    <style>
-        :root {
-            --primary: #8B4513; /* SaddleBrown */
-            --secondary: #D2691E; /* Chocolate */
-            --accent: #F4A460; /* SandyBrown */
-            --light: #FFF8DC; /* Cornsilk */
-            --dark: #3E2723;
-            --text: #4E342E;
-            --white: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--light);
-            color: var(--text);
-            line-height: 1.6;
-            scroll-behavior: smooth;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header & Nav */
-        header {
-            background-color: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
-        }
-
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .logo-area img {
-            height: 60px;
-            border-radius: 50%;
-        }
-
-        .logo-text h1 {
-            font-size: 1.5rem;
-            color: var(--primary);
-            text-transform: uppercase;
-        }
-
-        .tagline {
-            font-size: 0.8rem;
-            color: var(--secondary);
-            font-weight: bold;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 20px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--text);
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--secondary);
-        }
-
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--primary);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=1200') no-repeat center/cover;
-            height: 60vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: var(--white);
-        }
-
-        .hero h2 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
-
-        /* Sections General */
-        section {
-            padding: 80px 0;
-        }
-
-        h2.section-title {
-            text-align: center;
-            font-size: 2.2rem;
-            color: var(--primary);
-            margin-bottom: 40px;
-            position: relative;
-        }
-
-        h2.section-title::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 3px;
-            background: var(--secondary);
-            margin: 10px auto;
-        }
-
-        /* Grid de Produtos */
-        .produtos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background: var(--white);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .card-body {
-            padding: 20px;
-        }
-
-        .card-body h3 {
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-
-        /* Ambiente / Vídeo */
-        .ambiente-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .video-wrapper {
-            flex: 1;
-            min-width: 300px;
-            background: #000;
-            border-radius: 12px;
-            overflow: hidden;
-            aspect-ratio: 16/9;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: var(--white);
-            padding: 40px 0;
-            text-align: center;
-        }
-
-        .footer-info {
-            margin-bottom: 20px;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            nav {
-                display: none;
-            }
-            .menu-toggle {
-                display: block;
-            }
-            .hero h2 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Padaria do Bairro - Pães artesanais, doces e salgados feitos com carinho. Encomendas especiais para bolos de aniversário.">
+    <meta name="keywords" content="padaria, pães artesanais, bolos, doces, salgados, cafeteria">
+    <title>Padaria do Bairro - Tradição e Sabor Artesanal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-
-    <!-- Cabeçalho Principal -->
+    <!-- Header com navegação -->
     <header>
-        <div class="container header-content">
-            <div class="logo-area">
-                <img src="https://via.placeholder.com/60/8B4513/FFFFFF?text=PB" alt="Logo Padaria do Bairro" />
-                <div class="logo-text">
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <i class="fas fa-bread-slice"></i>
                     <h1>Padaria do Bairro</h1>
-                    <p class="tagline">Sabor, Tradição e Comunidade</p>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#cardapio">Cardápio</a></li>
+                    <li><a href="#encomendas">Encomendas</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="#" id="cart-btn"><i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span></a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </div>
-
-            <button class="menu-toggle" aria-label="Abrir Menu Principal" onclick="toggleMenu()">☰</button>
-            
-            <nav id="main-nav">
-                <ul>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#produtos">Produtos</a></li>
-                    <li><a href="#diferenciais">Diferenciais</a></li>
-                    <li><a href="#localizacao">Onde Estamos</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </nav>
-        </div>
+        </nav>
     </header>
 
+    <!-- Main Content -->
     <main>
         <!-- Hero Section -->
-        <section class="hero">
-            <div class="container">
-                <h2>O sabor do pão quentinho que une a vizinhança.</h2>
-                <p>Desde 1985, honrando a tradição artesanal.</p>
-            </div>
-        </section>
-
-        <!-- Sobre Nós -->
-        <section id="sobre" class="container">
-            <h2 class="section-title">Nossa História</h2>
-            <article>
-                <p>A Padaria do Bairro nasceu há mais de 20 anos com a missão de oferecer pães fresquinhos e produtos caseiros que aproximam vizinhos e famílias. Nossa história começou em uma pequena cozinha com o Sr. José, e hoje somos referência local em qualidade e atendimento.</p>
-                <br>
-                <p>Trabalhamos com ingredientes selecionados, receitas artesanais e práticas sustentáveis. Valorizamos a comunidade, o atendimento acolhedor e o apoio a produtores locais, buscando sempre reduzir desperdício e usar embalagens recicláveis.</p>
-            </article>
-        </section>
-
-        <!-- Produtos -->
-        <section id="produtos" style="background-color: #fcf4ec;">
-            <div class="container">
-                <h2 class="section-title">Nossos Produtos</h2>
-                <div class="produtos-grid">
-                    <!-- Produto 1 -->
-                    <article class="card">
-                        <figure>
-                            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=400" alt="Pão Francês Artesanal crocante">
-                            <figcaption class="card-body">
-                                <h3>Pão Francês Artesanal</h3>
-                                <p>Crocante por fora, macio por dentro. Nossa marca registrada.</p>
-                            </figcaption>
-                        </figure>
-                    </article>
-
-                    <!-- Produto 2 -->
-                    <article class="card">
-                        <figure>
-                            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&q=80&w=400" alt="Bolo de Festa sabor chocolate">
-                            <figcaption class="card-body">
-                                <h3>Bolos de Festa</h3>
-                                <p>Recheios variados e receitas de família para sua celebração.</p>
-                            </figcaption>
-                        </figure>
-                    </article>
-
-                    <!-- Produto 3 -->
-                    <article class="card">
-                        <figure>
-                            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&q=80&w=400" alt="Croissant amanteigado">
-                            <figcaption class="card-body">
-                                <h3>Croissant</h3>
-                                <p>Massa folhada amanteigada seguindo a técnica clássica.</p>
-                            </figcaption>
-                        </figure>
-                    </article>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2>Tradição e Sabor em Cada Pedaço</h2>
+                <p>Pães artesanais fresquinhos todos os dias, feitos com ingredientes selecionados e muito carinho</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="document.getElementById('cardapio').scrollIntoView({behavior: 'smooth'})">Ver Cardápio</button>
+                    <button class="btn btn-secondary" id="open-signup-modal">Cadastre-se e Ganhe Desconto</button>
                 </div>
             </div>
         </section>
 
-        <!-- Diferenciais -->
-        <section id="diferenciais" class="container">
-            <h2 class="section-title">Por que nos escolher?</h2>
-            <div class="ambiente-content">
-                <div style="flex: 1;">
-                    <ul style="list-style-type: '🥖 '; padding-left: 20px;">
-                        <li><strong>Artesanal:</strong> Receitas familiares e exclusivas.</li>
-                        <li><strong>Acolhimento:</strong> Atendimento que te faz sentir em casa.</li>
-                        <li><strong>Sustentabilidade:</strong> Embalagens recicláveis e zero desperdício.</li>
-                        <li><strong>Personalização:</strong> Encomendas sob medida para sua festa.</li>
-                    </ul>
+        <!-- Sobre Section -->
+        <section id="sobre" class="about">
+            <div class="container">
+                <h2>Nossa História</h2>
+                <article class="about-content">
+                    <div class="about-text">
+                        <p>Bem-vindo à Padaria do Bairro, onde a tradição artesanal se encontra com o sabor autêntico de uma padaria de verdade. Desde nossa fundação, nos dedicamos a oferecer produtos de altíssima qualidade, preparados diariamente com ingredientes cuidadosamente selecionados e técnicas tradicionais que passam de geração em geração. Nosso compromisso é proporcionar a você e sua família momentos especiais através do aroma inconfundível de pão fresco saindo do forno.</p>
+                        
+                        <p>Nossa equipe de padeiros experientes trabalha incansavelmente desde as primeiras horas da manhã para garantir que você encontre sempre pães quentinhos, crocantes por fora e macios por dentro. Cada produto é feito com amor e dedicação, mantendo vivas as receitas tradicionais enquanto também inovamos com sabores contemporâneos que agradam a todos os paladares. Acreditamos que o segredo de um bom pão está na qualidade da matéria-prima e no tempo de fermentação natural.</p>
+                        
+                        <p>Além de nossos famosos pães artesanais, oferecemos uma variedade completa de doces irresistíveis, salgados saborosos, bolos personalizados para ocasiões especiais e uma seleção exclusiva de cafés e bebidas quentes que completam perfeitamente sua experiência conosco. Nossa cafeteria é o ponto de encontro ideal para começar o dia, fazer uma pausa no trabalho ou simplesmente desfrutar de bons momentos com amigos e família em nosso ambiente acolhedor e charmoso.</p>
+                        
+                        <p>A Padaria do Bairro é mais do que um estabelecimento comercial - é um espaço de convivência, onde as pessoas se encontram, compartilham histórias e criam memórias afetivas. Nosso compromisso vai além de vender produtos: queremos fazer parte da sua rotina, ser o lugar onde você se sente em casa. Venha nos visitar e descubra por que somos a padaria preferida do bairro. Aqui, cada cliente é tratado como parte da nossa grande família, e cada visita é uma oportunidade de surpreender você com qualidade, sabor e atendimento excepcional.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Diferenciais Aside -->
+        <aside class="diferenciais">
+            <div class="container">
+                <h2>Nossos Diferenciais</h2>
+                <div class="diferenciais-grid">
+                    <article class="diferencial-item">
+                        <i class="fas fa-heart"></i>
+                        <h3>Acolhimento</h3>
+                        <p>Atendimento caloroso e personalizado para cada cliente. Você é sempre bem-vindo!</p>
+                    </article>
+                    <article class="diferencial-item">
+                        <i class="fas fa-fire"></i>
+                        <h3>Pão Francês Fresquinho</h3>
+                        <p>Pão quentinho saindo do forno a toda hora. Sempre crocante e irresistível!</p>
+                    </article>
+                    <article class="diferencial-item">
+                        <i class="fas fa-store"></i>
+                        <h3>Ambiente Agradável</h3>
+                        <p>Espaço confortável e aconchegante para você saborear nossos produtos</p>
+                        <div class="fachada-preview">
+                            <div class="fachada-placeholder">
+                                <i class="fas fa-building"></i>
+                                <p>Fachada Acolhedora da Padaria do Bairro</p>
+                            </div>
+                        </div>
+                    </article>
                 </div>
-                <div class="video-wrapper">
-                    <!-- Simulador de Vídeo -->
-                    <div style="text-align: center;">
-                        <p>▶ Vídeo Institucional</p>
-                        <small>(Vídeo: A Jornada Sensorial)</small>
+            </div>
+        </aside>
+
+        <!-- Cardápio Section -->
+        <section id="cardapio" class="menu">
+            <div class="container">
+                <h2>Nosso Cardápio</h2>
+                
+                <!-- Listas de Categorias -->
+                <div class="menu-lists">
+                    <div class="list-column">
+                        <h3>Pães Mais Vendidos (Ordenado)</h3>
+                        <ol class="menu-list ordered">
+                            <li>Pão Francês Tradicional</li>
+                            <li>Pão de Forma Integral</li>
+                            <li>Baguete Artesanal</li>
+                            <li>Pão de Batata</li>
+                            <li>Ciabatta Italiana</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="list-column">
+                        <h3>Doces da Casa (Não ordenado)</h3>
+                        <ul class="menu-list unordered">
+                            <li>Croissant de Chocolate</li>
+                            <li>Pão de Mel Artesanal</li>
+                            <li>Sonho Recheado</li>
+                            <li>Torta de Morango</li>
+                            <li>Brigadeirão Gourmet</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="list-column">
+                        <h3>Salgados Especiais (Ordenado)</h3>
+                        <ol class="menu-list ordered">
+                            <li>Coxinha de Frango Catupiry</li>
+                            <li>Pastel de Carne</li>
+                            <li>Empada de Palmito</li>
+                            <li>Quiche de Alho-poró</li>
+                            <li>Esfirra de Carne</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="list-column">
+                        <h3>Bebidas e Cafeteria (Não ordenado)</h3>
+                        <ul class="menu-list unordered">
+                            <li>Café Espresso Premium</li>
+                            <li>Cappuccino Tradicional</li>
+                            <li>Chocolate Quente</li>
+                            <li>Suco Natural do Dia</li>
+                            <li>Chá Artesanal</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Tabela de Produtos -->
+                <div class="products-table-section">
+                    <h3>Tabela de Produtos e Preços</h3>
+                    <div class="table-responsive">
+                        <table class="products-table">
+                            <thead>
+                                <tr>
+                                    <th>Produto</th>
+                                    <th>Categoria</th>
+                                    <th>Descrição</th>
+                                    <th>Preço</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody id="products-table-body">
+                                <!-- Preenchido via JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Cards de Produtos para Compra -->
+                <div class="products-grid" id="products-grid">
+                    <!-- Preenchido via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Sommelier Bot Section -->
+        <section id="sommelier" class="sommelier">
+            <div class="container">
+                <h2><i class="fas fa-robot"></i> Sommelier Virtual</h2>
+                <p class="sommelier-intro">Nosso assistente inteligente cria combinações perfeitas e sugere receitas exclusivas com nossos produtos!</p>
+                
+                <div class="sommelier-interface">
+                    <div class="sommelier-chat" id="sommelier-chat">
+                        <div class="chat-message bot-message">
+                            <i class="fas fa-robot"></i>
+                            <p>Olá! Sou o Sommelier da Padaria do Bairro. Posso sugerir combinações deliciosas e receitas especiais com nossos produtos. O que você gostaria hoje?</p>
+                        </div>
+                    </div>
+                    
+                    <div class="sommelier-input">
+                        <input type="text" id="sommelier-input" placeholder="Ex: Quero uma receita com pão francês..." />
+                        <button class="btn btn-primary" id="sommelier-send">
+                            <i class="fas fa-paper-plane"></i> Enviar
+                        </button>
+                    </div>
+                    
+                    <div class="sommelier-suggestions">
+                        <p>Sugestões rápidas:</p>
+                        <button class="suggestion-btn" data-query="Café da manhã completo">Café da Manhã</button>
+                        <button class="suggestion-btn" data-query="Lanche da tarde">Lanche da Tarde</button>
+                        <button class="suggestion-btn" data-query="Receita com croissant">Receitas com Croissant</button>
+                        <button class="suggestion-btn" data-query="Combinação com café">Melhor com Café</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Localização -->
-        <section id="localizacao" style="background-color: var(--primary); color: white;">
+        <!-- Encomendas de Bolos Section -->
+        <section id="encomendas" class="encomendas">
             <div class="container">
-                <h2 class="section-title" style="color: white;">Onde Estamos</h2>
-                <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-around; text-align: center;">
-                    <div>
-                        <h3>Endereço</h3>
-                        <p>Rua das Flores, nº 123 - Centro<br>Campina Grande, PB</p>
+                <h2>Encomendas Especiais</h2>
+                <p class="section-intro">Bolos personalizados para tornar seu aniversário ainda mais especial!</p>
+                
+                <form id="encomenda-form" class="encomenda-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nome-cliente">Nome Completo *</label>
+                            <input type="text" id="nome-cliente" name="nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefone-cliente">Telefone *</label>
+                            <input type="tel" id="telefone-cliente" name="telefone" required>
+                        </div>
                     </div>
-                    <div>
-                        <h3>Horários</h3>
-                        <p>Seg a Sex: 06h às 20h<br>Sábados: 06h às 20h<br>Domingos: 06h às 14h</p>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email-cliente">E-mail *</label>
+                            <input type="email" id="email-cliente" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="data-entrega">Data de Entrega *</label>
+                            <input type="date" id="data-entrega" name="data" required>
+                        </div>
                     </div>
+                    
+                    <div class="form-group">
+                        <label for="tipo-bolo">Tipo de Bolo *</label>
+                        <select id="tipo-bolo" name="tipo" required>
+                            <option value="">Selecione...</option>
+                            <option value="chocolate">Chocolate</option>
+                            <option value="morango">Morango</option>
+                            <option value="baunilha">Baunilha</option>
+                            <option value="red-velvet">Red Velvet</option>
+                            <option value="limao">Limão</option>
+                            <option value="cenoura">Cenoura com Chocolate</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="peso-bolo">Peso (kg) *</label>
+                        <input type="number" id="peso-bolo" name="peso" min="0.5" step="0.5" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="mensagem-bolo">Mensagem no Bolo</label>
+                        <input type="text" id="mensagem-bolo" name="mensagem" maxlength="50">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="detalhes-bolo">Detalhes Especiais</label>
+                        <textarea id="detalhes-bolo" name="detalhes" rows="4" placeholder="Descreva cores, decoração, tema, etc."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Enviar Encomenda</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Comentários e Avaliações Section -->
+        <section id="avaliacoes" class="reviews">
+            <div class="container">
+                <h2>O Que Nossos Clientes Dizem</h2>
+                <div class="reviews-grid">
+                    <article class="review-card">
+                        <div class="review-header">
+                            <i class="fas fa-user-circle"></i>
+                            <div>
+                                <h4>Maria Silva</h4>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p>"Melhor padaria do bairro! O pão francês é sempre quentinho e crocante. O atendimento é excepcional e o ambiente muito aconchegante. Virei cliente fiel!"</p>
+                    </article>
+                    
+                    <article class="review-card">
+                        <div class="review-header">
+                            <i class="fas fa-user-circle"></i>
+                            <div>
+                                <h4>João Santos</h4>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p>"Encomendei um bolo de aniversário personalizado e superou todas as expectativas! Qualidade impecável, sabor incrível. Recomendo muito!"</p>
+                    </article>
+                    
+                    <article class="review-card">
+                        <div class="review-header">
+                            <i class="fas fa-user-circle"></i>
+                            <div>
+                                <h4>Ana Paula</h4>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p>"Os doces são maravilhosos! O croissant de chocolate derrete na boca. Além disso, o café é excelente. Lugar perfeito para um lanche da tarde!"</p>
+                    </article>
+                    
+                    <article class="review-card">
+                        <div class="review-header">
+                            <i class="fas fa-user-circle"></i>
+                            <div>
+                                <h4>Carlos Mendes</h4>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p>"Produtos artesanais de verdade! Você sente a diferença na qualidade. Os salgados são deliciosos e o atendimento sempre atencioso. Parabéns!"</p>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <!-- Curso Info -->
-        <section id="curso" class="container">
-            <aside style="border-left: 4px solid var(--secondary); padding-left: 20px; font-style: italic;">
-                <h3>Projeto Educacional</h3>
-                <p>Este site faz parte do curso <strong>Programação Web (Qualifica São Paulo)</strong>. Um projeto integrado para capacitar novos desenvolvedores em HTML5, CSS3 e JavaScript.</p>
-            </aside>
+        <!-- Contato Section -->
+        <section id="contato" class="contact">
+            <div class="container">
+                <h2>Entre em Contato</h2>
+                
+                <div class="contact-grid">
+                    <!-- Formulário de Contato Geral -->
+                    <div class="contact-form-section">
+                        <h3>Contato Geral</h3>
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-group">
+                                <label for="contact-name">Nome *</label>
+                                <input type="text" id="contact-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-email">E-mail *</label>
+                                <input type="email" id="contact-email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-subject">Assunto *</label>
+                                <input type="text" id="contact-subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-message">Mensagem *</label>
+                                <textarea id="contact-message" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                        </form>
+                    </div>
+                    
+                    <!-- Newsletter -->
+                    <div class="newsletter-section">
+                        <h3>Newsletter</h3>
+                        <p>Receba ofertas exclusivas e novidades!</p>
+                        <form id="newsletter-form" class="newsletter-form">
+                            <div class="form-group">
+                                <label for="newsletter-name">Nome *</label>
+                                <input type="text" id="newsletter-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="newsletter-email">E-mail *</label>
+                                <input type="email" id="newsletter-email" required>
+                            </div>
+                            <button type="submit" class="btn btn-secondary">Assinar Newsletter</button>
+                        </form>
+                        
+                        <!-- Feedback -->
+                        <div class="feedback-section">
+                            <h3>Deixe seu Feedback</h3>
+                            <form id="feedback-form" class="feedback-form">
+                                <div class="form-group">
+                                    <label for="feedback-name">Nome *</label>
+                                    <input type="text" id="feedback-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="feedback-rating">Avaliação *</label>
+                                    <select id="feedback-rating" required>
+                                        <option value="">Selecione...</option>
+                                        <option value="5">⭐⭐⭐⭐⭐ Excelente</option>
+                                        <option value="4">⭐⭐⭐⭐ Muito Bom</option>
+                                        <option value="3">⭐⭐⭐ Bom</option>
+                                        <option value="2">⭐⭐ Regular</option>
+                                        <option value="1">⭐ Ruim</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="feedback-message">Comentário *</label>
+                                    <textarea id="feedback-message" rows="3" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Enviar Feedback</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Endereço</h4>
+                            <p>Rua das Flores, 123 - Centro<br>São Paulo, SP - CEP 01234-567</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Telefone</h4>
+                            <p>(11) 98765-4321</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Horário de Funcionamento</h4>
+                            <p>Segunda a Sábado: 6h às 20h<br>Domingo: 6h às 13h</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
-    <!-- Rodapé -->
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-info">
-                <p><strong>Padaria do Bairro</strong> - CNPJ: 00.000.000/0001-00</p>
-                <p>📞 (11) 4000-1234 | ✉ contato@padariadobairro.com.br</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Padaria do Bairro</h3>
+                    <p>Tradição artesanal desde 1985</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#cardapio">Cardápio</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Redes Sociais</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
             </div>
-            <p>&copy; 2026 Todos os direitos reservados. Sabor e Tradição desde 1985.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Padaria do Bairro. Todos os direitos reservados.</p>
+            </div>
         </div>
     </footer>
 
-    <script>
-        function toggleMenu() {
-            const nav = document.getElementById('main-nav');
-            if (nav.style.display === 'block') {
-                nav.style.display = 'none';
-            } else {
-                nav.style.display = 'block';
-            }
-        }
-    </script>
+    <!-- Modal de Cadastro com Desconto -->
+    <div id="signup-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>🎉 Cadastre-se e Ganhe 10% de Desconto!</h2>
+            <p>Cadastre-se agora e ganhe 10% de desconto na sua primeira compra!</p>
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="signup-name">Nome Completo *</label>
+                    <input type="text" id="signup-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">E-mail *</label>
+                    <input type="email" id="signup-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-phone">Telefone *</label>
+                    <input type="tel" id="signup-phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Senha *</label>
+                    <input type="password" id="signup-password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Cadastrar e Ganhar Desconto</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal do Carrinho -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content cart-modal-content">
+            <span class="close">&times;</span>
+            <h2>🛒 Seu Carrinho</h2>
+            <div id="cart-items"></div>
+            <div class="cart-summary">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cart-total">R$ 0,00</span>
+                </div>
+                <button class="btn btn-primary" id="checkout-btn">Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Checkout -->
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content checkout-modal-content">
+            <span class="close">&times;</span>
+            <h2>💳 Finalizar Compra</h2>
+            <form id="checkout-form">
+                <h3>Dados de Entrega</h3>
+                <div class="form-group">
+                    <label for="checkout-name">Nome Completo *</label>
+                    <input type="text" id="checkout-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="checkout-address">Endereço *</label>
+                    <input type="text" id="checkout-address" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="checkout-city">Cidade *</label>
+                        <input type="text" id="checkout-city" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkout-zip">CEP *</label>
+                        <input type="text" id="checkout-zip" required>
+                    </div>
+                </div>
+                
+                <h3>Forma de Pagamento</h3>
+                <div class="payment-methods">
+                    <label class="payment-method">
+                        <input type="radio" name="payment" value="credit" required>
+                        <span><i class="fas fa-credit-card"></i> Cartão de Crédito</span>
+                    </label>
+                    <label class="payment-method">
+                        <input type="radio" name="payment" value="debit" required>
+                        <span><i class="fas fa-money-check"></i> Cartão de Débito</span>
+                    </label>
+                    <label class="payment-method">
+                        <input type="radio" name="payment" value="pix" required>
+                        <span><i class="fas fa-qrcode"></i> PIX</span>
+                    </label>
+                    <label class="payment-method">
+                        <input type="radio" name="payment" value="cash" required>
+                        <span><i class="fas fa-money-bill"></i> Dinheiro</span>
+                    </label>
+                </div>
+                
+                <div id="card-details" class="card-details" style="display: none;">
+                    <div class="form-group">
+                        <label for="card-number">Número do Cartão *</label>
+                        <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="card-expiry">Validade *</label>
+                            <input type="text" id="card-expiry" placeholder="MM/AA" maxlength="5">
+                        </div>
+                        <div class="form-group">
+                            <label for="card-cvv">CVV *</label>
+                            <input type="text" id="card-cvv" placeholder="123" maxlength="3">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="card-name">Nome no Cartão *</label>
+                        <input type="text" id="card-name">
+                    </div>
+                </div>
+                
+                <div class="checkout-summary">
+                    <p>Total a Pagar: <strong id="checkout-total">R$ 0,00</strong></p>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-block">Confirmar Pagamento</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Botão WhatsApp Flutuante -->
+    <a href="https://wa.me/5511987654321?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido." class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="js/database.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/sommelier.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
