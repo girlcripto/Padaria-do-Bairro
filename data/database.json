@@ -1,0 +1,117 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Pão Francês",
+      "category": "Pães",
+      "description": "Pão francês tradicional, crocante por fora e macio por dentro",
+      "price": 0.50,
+      "stock": 100,
+      "image": "pao-frances.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Croissant de Chocolate",
+      "category": "Doces",
+      "description": "Croissant folhado recheado com chocolate belga premium",
+      "price": 8.50,
+      "stock": 100,
+      "image": "croissant.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Coxinha de Frango",
+      "category": "Salgados",
+      "description": "Coxinha artesanal com recheio cremoso de frango e catupiry",
+      "price": 6.50,
+      "stock": 100,
+      "image": "coxinha.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Baguete Artesanal",
+      "category": "Pães",
+      "description": "Baguete francesa tradicional feita com fermentação natural",
+      "price": 9.90,
+      "stock": 100,
+      "image": "baguete.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Sonho Recheado",
+      "category": "Doces",
+      "description": "Sonho fofinho recheado com creme de baunilha e açúcar",
+      "price": 7.00,
+      "stock": 100,
+      "image": "sonho.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Pastel de Carne",
+      "category": "Salgados",
+      "description": "Pastel crocante com recheio de carne moída temperada",
+      "price": 5.50,
+      "stock": 100,
+      "image": "pastel.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Pão de Forma Integral",
+      "category": "Pães",
+      "description": "Pão de forma integral rico em fibras, perfeito para sanduíches",
+      "price": 12.90,
+      "stock": 100,
+      "image": "pao-forma.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Torta de Morango",
+      "category": "Doces",
+      "description": "Torta cremosa com morangos frescos e chantilly",
+      "price": 45.00,
+      "stock": 100,
+      "image": "torta-morango.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Empada de Palmito",
+      "category": "Salgados",
+      "description": "Empada delicada com recheio de palmito e requeijão",
+      "price": 7.50,
+      "stock": 100,
+      "image": "empada.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Café Espresso Premium",
+      "category": "Cafeteria",
+      "description": "Café espresso de grãos selecionados, encorpado e aromático",
+      "price": 6.00,
+      "stock": 100,
+      "image": "cafe-espresso.jpg"
+    },
+    {
+      "id": 11,
+      "name": "Caneca Padaria do Bairro",
+      "category": "Souvenirs",
+      "description": "Caneca de cerâmica personalizada com logo da padaria",
+      "price": 35.00,
+      "stock": 100,
+      "image": "caneca.jpg"
+    },
+    {
+      "id": 12,
+      "name": "Avental Artesanal",
+      "category": "Souvenirs",
+      "description": "Avental de tecido premium com bordado da Padaria do Bairro",
+      "price": 89.90,
+      "stock": 100,
+      "image": "avental.jpg"
+    }
+  ],
+  "users": [],
+  "orders": [],
+  "customCakes": [],
+  "newsletter": [],
+  "feedback": []
+}
